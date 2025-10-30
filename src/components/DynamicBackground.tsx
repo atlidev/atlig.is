@@ -6,6 +6,8 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 const PATH_TO_IMAGE: Record<string, string> = {
   "/lason": `/images/atli.jpeg`,
   "/who": `/images/bjor.jpeg`,
+  "/web": `/images/kebab.jpeg`,
+  "/past": `/images/koozy.jpeg`,
 };
 const DEFAULT_IMAGE = `/images/atli.jpeg`;
 const DURATION_MS = 100;

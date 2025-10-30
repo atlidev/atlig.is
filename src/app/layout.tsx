@@ -40,6 +40,9 @@ export default function RootLayout({
           <DynamicBackground />
         </Suspense>
         {children}
+        {/* <div className="absolute top-4 right-4 bg-amber-50 shadow h-16 w-16 rounded-full  flex items-center justify-center">
+          <span className="text-4xl">🌐</span>
+        </div> */}
       </body>
     </html>
   );
