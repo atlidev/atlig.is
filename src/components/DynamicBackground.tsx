@@ -8,6 +8,7 @@ const PATH_TO_IMAGE: Record<string, string> = {
   "/who": `/images/bjor.jpeg`,
   "/web": `/images/kebab.jpeg`,
   "/past": `/images/koozy.jpeg`,
+  "/projects": `/images/bekkur.jpeg`,
 };
 const DEFAULT_IMAGE = `/images/atli.jpeg`;
 const DURATION_MS = 100;
