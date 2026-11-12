@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { Article } from "@/components/Article";
+import { TilgangurDiagram } from "@/components/TilgangurDiagram";
 
 export default function Verkefni2() {
   return (
@@ -40,13 +40,7 @@ export default function Verkefni2() {
 
       <section className="flex flex-col gap-4">
         <h3 className="text-2xl font-archivo-black">Frumrannsóknir</h3>
-        <Image
-          src="/images/here_diagram.jpg"
-          alt="Skýringarmynd úr frumrannsóknum"
-          width={1581}
-          height={2056}
-          className="w-full h-auto rounded-xl"
-        />
+        <TilgangurDiagram />
       </section>
 
       <section className="flex flex-col gap-4">
