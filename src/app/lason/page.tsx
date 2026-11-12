@@ -16,7 +16,7 @@ export default function Home() {
         className="side-to-side-reverse animation-delay-2 group cursor-pointer bg-orange-300 px-3 py-1 rounded-xl ml-[10%] hover:bg-orange-400 transition-all duration-500"
       >
         <p className="text-xl">
-          Hver <span className="group-hover:font-black">er</span> ég?
+          Hver <span className="group-hover:font-bold">er</span> ég?
         </p>
       </DynamicLink>
       <DynamicLink
@@ -24,7 +24,7 @@ export default function Home() {
         className="side-to-side-reverse animation-delay-1 group cursor-pointer bg-slate-300 px-3 py-1 rounded-xl mr-[30%] hover:bg-slate-400 transition-all duration-500"
       >
         <p className="text-xl">
-          Hver <span className="group-hover:font-black">var</span> ég?
+          Hver <span className="group-hover:font-bold">var</span> ég?
         </p>
       </DynamicLink>
       <DynamicLink
@@ -32,7 +32,7 @@ export default function Home() {
         className="side-to-side group cursor-pointer bg-green-400 px-3 py-1 rounded-xl ml-[20%] hover:bg-green-500 transition-all duration-500"
       >
         <p className="text-xl">
-          Ég geri <span className="group-hover:font-black">heimasíður</span>
+          Ég geri <span className="group-hover:font-bold">heimasíður</span>
         </p>
       </DynamicLink>
       <DynamicLink
@@ -40,7 +40,7 @@ export default function Home() {
         className="side-to-side-reverse animation-delay-1 group cursor-pointer bg-teal-400 px-3 py-1 rounded-xl mr-[10%] hover:bg-teal-500 transition-all duration-500"
       >
         <p className="text-xl">
-          Tíðarandi <span className="group-hover:font-black">verkefni</span>
+          Tíðarandi <span className="group-hover:font-bold">verkefni</span>
         </p>
       </DynamicLink>
       {/* Seperator */}
@@ -51,7 +51,7 @@ export default function Home() {
         className="side-to-side-reverse animation-delay-2 group cursor-pointer bg-blue-400 px-3 py-1 rounded-xl mr-[20%] hover:bg-blue-500 transition-all duration-500"
       >
         <p className="text-xl">
-          Ég skapa <span className="group-hover:font-black">hugbúnað</span>
+          Ég skapa <span className="group-hover:font-bold">hugbúnað</span>
         </p>
       </DynamicLink>
       <DynamicLink
@@ -59,7 +59,7 @@ export default function Home() {
         className="side-to-side animation-delay-1 group cursor-pointer bg-red-400 px-3 py-1 rounded-xl ml-[30%] hover:bg-red-500 transition-all duration-500"
       >
         <p className="text-xl">
-          Ég á <span className="group-hover:font-black">Instagram</span>
+          Ég á <span className="group-hover:font-bold">Instagram</span>
         </p>
       </DynamicLink>
       <DynamicLink
@@ -67,7 +67,7 @@ export default function Home() {
         className="side-to-side-reverse group cursor-pointer bg-pink-400 px-3 py-1 rounded-xl mr-[40%] hover:bg-pink-500 transition-all duration-500"
       >
         <p className="text-xl">
-          Ég á <span className="group-hover:font-black">LinkedIn</span>
+          Ég á <span className="group-hover:font-bold">LinkedIn</span>
         </p>
       </DynamicLink>
     </div>
