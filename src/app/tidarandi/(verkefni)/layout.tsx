@@ -15,7 +15,7 @@ export default function VerkefniLayout({
 }>) {
   return (
     <>
-      <nav className="absolute top-4 left-24 right-4 min-h-9 flex flex-wrap items-center content-center justify-center gap-x-3 text-base lg:top-20 lg:left-4 lg:right-auto lg:min-h-0 lg:flex-col lg:items-start lg:content-normal lg:justify-start lg:gap-1">
+      <nav className="absolute top-4 left-24 right-4 min-h-9 flex flex-wrap items-center content-center justify-center gap-x-3 text-base lg:fixed lg:top-20 lg:left-4 lg:right-auto lg:min-h-0 lg:flex-col lg:items-start lg:content-normal lg:justify-start lg:gap-1">
         {LINKS.map(({ href, label, className }) => (
           <DynamicLink
             key={href}
