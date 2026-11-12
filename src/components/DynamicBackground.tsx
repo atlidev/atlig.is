@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 const PATH_TO_IMAGE: Record<string, string> = {
@@ -11,69 +11,81 @@ const PATH_TO_IMAGE: Record<string, string> = {
   "/tidarandi": `/images/snow_atli.png`,
 };
 const DEFAULT_IMAGE = `/images/atli.jpeg`;
-const DURATION_MS = 100;
 
 export const DynamicBackground = () => {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const router = useRouter();
-  const [fromImageUrl, setFromImageUrl] = useState<string | null>(null);
-  const [isFading, setIsFading] = useState(false);
 
   const toImageUrl =
     PATH_TO_IMAGE[pathname] ||
     PATH_TO_IMAGE[`/${pathname.split("/")[1]}`] ||
     DEFAULT_IMAGE;
 
-  // Handle fade logic when route changes
+  const [shownUrl, setShownUrl] = useState(toImageUrl);
+  const [fadingUrl, setFadingUrl] = useState<string | null>(null);
+
   useEffect(() => {
-    const fromParam = searchParams.get("from");
-    if (fromParam && PATH_TO_IMAGE[fromParam]) {
-      // Found a valid from → start fade animation
-      setFromImageUrl(PATH_TO_IMAGE[fromParam]);
-      setIsFading(true);
+    if (toImageUrl === shownUrl) return;
+    let cancelled = false;
+    const img = new Image();
+    img.src = toImageUrl;
+    img
+      .decode()
+      .catch(() => {})
+      .then(() => {
+        if (cancelled) return;
+        setFadingUrl(shownUrl);
+        setShownUrl(toImageUrl);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [toImageUrl, shownUrl]);
 
-      // Remove "from" from URL after short delay
-      const newParams = new URLSearchParams(searchParams);
-      newParams.delete("from");
-      const query = newParams.toString();
-      const newUrl = query ? `${pathname}?${query}` : pathname;
+  useEffect(() => {
+    if (!searchParams.has("from")) return;
+    const newParams = new URLSearchParams(searchParams);
+    newParams.delete("from");
+    const query = newParams.toString();
+    router.replace(query ? `${pathname}?${query}` : pathname, { scroll: false });
+  }, [pathname, searchParams, router]);
 
-      // Clean up URL after fade completes (100ms)
-      const timeout = setTimeout(() => {
-        router.replace(newUrl, { scroll: false });
-        setFromImageUrl(null);
-        setIsFading(false);
-      }, DURATION_MS); // match animation duration
-
-      return () => clearTimeout(timeout);
-    } else {
+  useEffect(() => {
+    const preload = () =>
+      Object.values(PATH_TO_IMAGE).forEach((url) => {
+        new Image().src = url;
+      });
+    if ("requestIdleCallback" in window) {
+      const id = requestIdleCallback(preload);
+      return () => cancelIdleCallback(id);
     }
-  }, [pathname]);
+    const id = setTimeout(preload, 1000);
+    return () => clearTimeout(id);
+  }, []);
 
   return (
     <div className="fixed inset-0 -z-10">
-      {/* To Background */}
       <div
         style={{
-          backgroundImage: `url(${toImageUrl})`,
+          backgroundImage: `url(${shownUrl})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
         className="absolute inset-0"
       />
-
-      {/* From Background (fading out) */}
-      <div
-        style={{
-          backgroundImage: `url(${fromImageUrl})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-        className={`absolute inset-0 transition-opacity duration-[${DURATION_MS}ms] ${
-          isFading ? "opacity-0" : "opacity-100"
-        }`}
-      />
+      {fadingUrl && (
+        <div
+          key={fadingUrl}
+          style={{
+            backgroundImage: `url(${fadingUrl})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+          className="absolute inset-0 fade-out"
+          onAnimationEnd={() => setFadingUrl(null)}
+        />
+      )}
     </div>
   );
 };
