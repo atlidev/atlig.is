@@ -47,19 +47,19 @@ export default function Home() {
         </p>
       </DynamicLink>
       <DynamicLink
-        href="https://www.instagram.com/atli_ad_hanna"
+        href="https://www.instagram.com/atli_gisla"
         className="side-to-side animation-delay-1 group cursor-pointer bg-red-400 px-3 py-1 rounded-xl ml-[30%] hover:bg-red-500 transition-all duration-500"
       >
         <p className="text-xl">
-          Ég er <span className="group-hover:font-black">vöruhönnuður</span>
+          Ég á <span className="group-hover:font-black">Instagram</span>
         </p>
       </DynamicLink>
       <DynamicLink
-        href="https://www.instagram.com/atli_gisla"
+        href="https://www.linkedin.com/in/atli-gislason/"
         className="side-to-side-reverse group cursor-pointer bg-pink-400 px-3 py-1 rounded-xl mr-[40%] hover:bg-pink-500 transition-all duration-500"
       >
         <p className="text-xl">
-          Ég á <span className="group-hover:font-black">Instagram</span>
+          Ég á <span className="group-hover:font-black">LinkedIn</span>
         </p>
       </DynamicLink>
     </div>
