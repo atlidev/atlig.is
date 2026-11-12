@@ -8,6 +8,7 @@ const PATH_TO_IMAGE: Record<string, string> = {
   "/who": `/images/bjor.jpeg`,
   "/web": `/images/kebab.jpeg`,
   "/past": `/images/koozy.jpeg`,
+  "/tidarandi": `/images/snow_atli.png`,
 };
 const DEFAULT_IMAGE = `/images/atli.jpeg`;
 const DURATION_MS = 100;
@@ -19,7 +20,10 @@ export const DynamicBackground = () => {
   const [fromImageUrl, setFromImageUrl] = useState<string | null>(null);
   const [isFading, setIsFading] = useState(false);
 
-  const toImageUrl = PATH_TO_IMAGE[pathname] || DEFAULT_IMAGE;
+  const toImageUrl =
+    PATH_TO_IMAGE[pathname] ||
+    PATH_TO_IMAGE[`/${pathname.split("/")[1]}`] ||
+    DEFAULT_IMAGE;
 
   // Handle fade logic when route changes
   useEffect(() => {
@@ -48,7 +52,7 @@ export const DynamicBackground = () => {
   }, [pathname]);
 
   return (
-    <div className="absolute inset-0 -z-10">
+    <div className="fixed inset-0 -z-10">
       {/* To Background */}
       <div
         style={{

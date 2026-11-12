@@ -35,6 +35,14 @@ export default function Home() {
           Ég geri <span className="group-hover:font-black">heimasíður</span>
         </p>
       </DynamicLink>
+      <DynamicLink
+        href="/tidarandi"
+        className="side-to-side-reverse animation-delay-1 group cursor-pointer bg-teal-400 px-3 py-1 rounded-xl mr-[10%] hover:bg-teal-500 transition-all duration-500"
+      >
+        <p className="text-xl">
+          Tíðarandi <span className="group-hover:font-black">verkefni</span>
+        </p>
+      </DynamicLink>
       {/* Seperator */}
       <div className="h-32"></div>
       {/* External links */}

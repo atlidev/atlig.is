@@ -49,7 +49,7 @@ export default function RootLayout({
 }
 
 const FallbackBackground = () => (
-  <div className="absolute inset-0 -z-10">
+  <div className="fixed inset-0 -z-10">
     {/* To Background */}
     <div
       style={{
