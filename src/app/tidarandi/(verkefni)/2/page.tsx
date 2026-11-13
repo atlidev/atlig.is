@@ -46,19 +46,41 @@ export default function Verkefni2() {
       <section className="flex flex-col gap-4">
         <h3 className="text-2xl font-archivo-black">Samhengi og Lykilinnsýn</h3>
         <p className="font-bold">Samhengi</p>
-        <p>global overview of single use</p>
+        <p>
+          Þetta verkefni er mjög global. Þetta er rannsókn í alla þá litlu
+          hluti sem mynda daglegt líf. Allar litlu hefðinnar sem við tökum ekki
+          einu sinni eftir eins og lyktin af eldspýtum, að fylgjast með
+          flugeldum, að fá bólusetningu eða að opna sultu krukku.
+        </p>
         <p className="font-bold">Key Insights</p>
-        <ol className="list-decimal pl-6">
-          <li>Rituals</li>
-          <li>Purity</li>
-          <li>Ownership</li>
-          <li>Information</li>
+        <ol className="list-decimal pl-6 flex flex-col gap-2">
+          <li>
+            Stór „rituals“ eru línulegt ferli þar sem manneskja umbreytist í
+            aðra þar sem ekki er hægt að snúast til baka. Með þessari hefð
+            fyglja oft hlutir sem fara í sömu línulegu átt
+          </li>
+          <li>
+            Mikið um einnota umbúðir snýst um tærleika. Það sem tengist
+            líkamanum: matur, spítala, eða baðherbergið snýst um að fá það
+            hreina inn og það óhreina út. Með þessu fylgja rituals kringum
+            einnota vörur, að enginn annar hafi komist að og skemmt vöruna -
+            eða að við séum þau sem fáum að gera hana óhreina.
+          </li>
+          <li>
+            Fyrir vörur og gripi, snúast umbúðir um tærleika á eignarhaldi. Með
+            því að opna pakkann ert þú sá sem eignast hann. Með því að opna
+            bréfið ert þú sá eini sem hefur lesið það.
+          </li>
         </ol>
       </section>
 
       <section className="flex flex-col gap-4">
         <h3 className="text-2xl font-archivo-black">Mikilvægi</h3>
-        <p>lorem ipsum.</p>
+        <p>
+          Ef samfélagið á að breytast í hringrásarsamfélag, þá er mikilvægt að
+          greina einnota hluti: hlutina sem koma mest í veg fyrir svoleiðis
+          samfélag akkúrat núna.
+        </p>
       </section>
     </Article>
   );
