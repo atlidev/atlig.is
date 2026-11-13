@@ -158,9 +158,8 @@ const BRANCHES: Branch[] = [
     children: [
       {
         title: "Hreinlæti",
-        subtitle: "spítali",
         diagram: <TextFlow from={["tært"]} note="sterílt" arrowStart={58} to={["óhreint"]} via="+ óhrein" />,
-        examples: ["klósett pappír", "bleyja", "nál + sprauta", "kleenex"],
+        examples: ["klósett pappír", "bleyja", "nál + sprauta", "kleenex", "spítali", "baðherbergi"],
         notes: ["traust", "vernd", "fjarlægja rusl úr líkama"],
       },
       {

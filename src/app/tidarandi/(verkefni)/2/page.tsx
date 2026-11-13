@@ -71,6 +71,12 @@ export default function Verkefni2() {
             því að opna pakkann ert þú sá sem eignast hann. Með því að opna
             bréfið ert þú sá eini sem hefur lesið það.
           </li>
+          <li>
+            Stundum er líf hlutsins ákveðið með dagsetningu: Plaggat fyrir
+            tónleika á laugardaginn, samningur sem rennur út eftir 2 ár,
+            auglýsingar bæklingur fyrir mánaðarlanga herferð. Hönnuðir geta búið
+            til legsteinninn fyrir gripinn á fæðingardeginum.
+          </li>
         </ol>
       </section>
 
